@@ -1,0 +1,55 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: #123;
+    color: white;
+}
+
+.App {
+    padding: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .row{
+    text-align: center;
+    color:aliceblue
+  }
+
+  table td{
+    border: 1px solid bisque;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+  }
+
+  .win{
+    cursor: not-allowed;
+  }
+
+  table{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-collapse: collapse;
+  }
+  
+  h1 {
+    font-size: 3rem;
+    letter-spacing: 0.9px;
+    background: linear-gradient(
+      90deg,
+      rgba(249, 211, 180, 1) 0%,
+      rgba(249, 211, 180, 0) 100%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    width: fit-content;
+  }
+
+  .tbod{
+    padding-top: 10px;
+  }

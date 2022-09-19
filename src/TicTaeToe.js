@@ -10,7 +10,7 @@ const TicTaeToe = () => {
     const [turn , setTurn]= useState('X');
     const [cells , setCells]= useState(Array(9).fill(''));
     const [winner , setWinner]= useState();
-
+    //const [cursor , setCursor]= useState();
 
     const checkWinner = (squares) => {
             let combos = {
@@ -37,14 +37,28 @@ const TicTaeToe = () => {
                             //nothing
                     } else if(squares[pattern[0]] === squares[pattern[1]] && squares[pattern[1]] === squares[pattern[2]]){
                         setWinner(squares[pattern[0]])
+                    
+                        
+                        document.querySelector('.tab').style.cursor="not-allowed";
+                    
                     }
                 });
+
             };
-            
+            chCursor();
     }
 
-    const handleClick = (num) => {
+    const chCursor = () => {
+        
+        if(winner){
+            console.log('hello');
+        }
+}
 
+    const handleClick = (num,e) => {
+        if (winner){
+            return;
+        }
         if (cells[num] !== ''){
             MySwal.fire({
                 position: 'top-end',
@@ -57,7 +71,7 @@ const TicTaeToe = () => {
             return;
         }
         let  squares= [...cells];
-        
+
             if(turn === 'X'){
                 squares[num] ='X';
                 setTurn('O');
@@ -66,6 +80,7 @@ const TicTaeToe = () => {
                 setTurn('X');
             }
             checkWinner(squares);
+            chCursor();
             setCells(squares);
     }
 
@@ -75,15 +90,16 @@ const TicTaeToe = () => {
     }
 
     const Cell = ({ num }) => {
-        return <td className="row" onClick={() => handleClick(num)}> {cells[num]} </td>;
+        return <td className="row" onClick={(e) => handleClick(num,e)}> {cells[num]} </td>;
     }
+
 
   return (
     <div className='App'>
         <h1>Tic Tae Toe</h1>
-
-        <table>
-            Turn = { turn }
+        Turn = { turn }
+        <table className='tab'>
+            
             <tbody className='tbod'>
                 <tr>
                     <Cell num = {0}/>

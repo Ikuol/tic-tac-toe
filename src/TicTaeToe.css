@@ -15,17 +15,19 @@ body{
 
   .row{
     text-align: center;
-    color:aliceblue
-  }
-
-  table td{
+    color:aliceblue;
     border: 1px solid bisque;
     width: 100px;
     height: 100px;
-    cursor: pointer;
+    cursor: inherit;
   }
 
   .win{
+    text-align: center;
+    color:aliceblue;
+    border: 1px solid bisque;
+    width: 100px;
+    height: 100px;
     cursor: not-allowed;
   }
 
@@ -34,8 +36,9 @@ body{
     flex-direction: column;
     gap: 10px;
     border-collapse: collapse;
+    cursor: pointer;
   }
-  
+
   h1 {
     font-size: 3rem;
     letter-spacing: 0.9px;
